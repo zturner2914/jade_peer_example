@@ -1,0 +1,12 @@
+extends layout
+
+block title
+    title Memes
+block content
+    h1 Memes
+    #memes(ng-controller='MainController')
+        each meme in memeTemplate
+            img(src= meme.link height=150 width=150)
+            div
+                input(type=text, ng-model="Message" + meme.id, value=meme.message)
+                p(style="color:#fff;font-weight:bold;font-size:24px;text-shadow:0 0 5px #000;top:-141px;position:relative")="{{Message" + meme.id + "}}"
